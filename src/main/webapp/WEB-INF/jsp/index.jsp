@@ -5,10 +5,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title></title>
-<script type="text/javascript" src="../assets/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/assets/jquery-3.4.1.min.js"></script>
 <script type="application/javascript">
-	
-
+		var url = "39.97.178.217:8888/";
       var socket ;
       //登录过后初始化socket连接
       function initSocket(userId) {
@@ -18,7 +17,7 @@
               console.log("您的浏览器支持WebSocket/websocket");
           }
           //socket连接地址: 注意是ws协议
-          socket = new WebSocket("ws://127.0.0.1:8888/websocket/"+userId);
+          socket = new WebSocket('ws:'+url+'websocket/'+userId);
           socket.onopen = function() {
               console.log("Socket 已打开");
           };
